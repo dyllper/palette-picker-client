@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Palette Picker`,
+    description: `Generate a color palette from your favorite images! Just upload a file to have a color palette automatically generated from the most prominant colors. Hex values included so you can easily use your new palette in other applications!`,
+    author: `Dylan Perkins`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
