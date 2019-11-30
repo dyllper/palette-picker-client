@@ -6,5 +6,5 @@ In this version of the client code, I have leveraged [Redux](https://redux.js.or
 
 # Future Plans
 
-- Convert application to use styled components
+- ~~Convert application to use styled components~~ **DONE**
 - Update styling to make things look nicer
