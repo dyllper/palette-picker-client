@@ -1,41 +1,43 @@
 import React from 'react';
+import styled from 'styled-components';
 import { connect } from 'react-redux';
+
+const PaletteContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+`
+
+const PeletteElement = styled.div`
+  width: 150px;
+  height: 100px;
+  display: flex;
+  align-items: flex-end;
+  align-content: flex-end;
+  justify-content: flex-start;
+`
+
+const PaletteText = styled.p`
+  padding: 0;
+  margin: 0;
+  font-size: 25px;
+  font-weight: bold;
+`
 
 const Palette = ({ showPalette, hexArray }) => (
   <div>
     {showPalette && (
-      <div className="palette">
+      <PaletteContainer>
         {hexArray.map((hexValue, index) => {
           return (
-            <div key={index} className="palette-element" style={{ backgroundColor: hexValue }}>
-              <p className="palette-text">{hexValue}</p>
-            </div>
+            <PeletteElement key={index} className="palette-element" style={{ backgroundColor: hexValue }}>
+              <PaletteText className="palette-text">{hexValue}</PaletteText>
+            </PeletteElement>
           )
         })}
-      </div>
+      </PaletteContainer>
     )}
-    <style jsx>{`
-        .palette {
-          display: flex;
-          align-items: center;
-          justify-content: space-around;
-          flex-wrap: wrap;
-        }
-        .palette-element {
-          width: 150px;
-          height: 100px;
-          display: flex;
-          align-items: flex-end;
-          align-content: flex-end;
-          justify-content: flex-start;
-        }
-        .palette-text {
-          padding: 0;
-          margin: 0;
-          font-size: 25px;
-          font-weight: bold;
-        }
-      `}</style>
   </div>
 )
 

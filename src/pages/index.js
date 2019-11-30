@@ -1,5 +1,6 @@
 import React from "react"
 import axios from "axios"
+import styled from "styled-components"
 import { connect } from "react-redux"
 
 import { clearImageName, setImageName } from "../redux/image/image.actions"
@@ -7,6 +8,27 @@ import { clearPalette, setPalette } from "../redux/palette/palette.actions"
 
 import FileForm from "../components/file-form.component"
 import Palette from "../components/palette.component"
+
+const Container = styled.div`
+  width: 900px;
+  margin: 0 auto;
+`
+
+const InstructionText = styled.p`
+  text-indent: 2em;
+  line-height: 1.5em;
+  font-size: 18px;
+  font-family: skolat-latin;
+  font-color: #1f1f1f;
+`
+
+const DisplayImage = styled.img`
+  height: auto;
+  width: 400px;
+  margin: 15px auto;
+  box-shadow: 5px 5xp 10px #0f0f0f;
+  display: block;
+`
 
 const IndexPage = ({ setImageName, clearImageName, imageName, setPalette }) => {
   const submitForm = image => {
@@ -39,43 +61,23 @@ const IndexPage = ({ setImageName, clearImageName, imageName, setPalette }) => {
     submitForm(image)
   }
   return (
-    <div className="main-div">
-      <p className="intro-text">
+    <Container>
+      <InstructionText>
         Welcome to my Color Palette Generator App! This fun little projects lets
         you upload an image that you enjoy the colors of and generate a color
         palette based on the 6 most prominent colors that exist within the
         image! The palette will be displayed below your image so that you are
         able to take a peak at where all each of the 6 color swatches come from!
-      </p>
+      </InstructionText>
       <FileForm onChange={onChange} />
       {imageName !== "" && (
-        <img
+        <DisplayImage
           src={`https://dyllper-color-palette-api.herokuapp.com/images/${imageName}`}
           alt="Your uploaded file"
         />
       )}
       <Palette />
-      <style jsx>{`
-        .main-div {
-          width: 900px;
-          margin: 0 auto;
-        }
-        .intro-text {
-          text-indent: 2em;
-          line-height: 1.5em;
-          font-size: 18px;
-          font-family: skolar-latin;
-          font-color: #1f1f1f;
-        }
-        .display-image {
-          height: auto;
-          width: 400px;
-          margin: 15px auto;
-          box-shadow: 5px 5px 10px #0f0f0f;
-          display: block;
-        }
-      `}</style>
-    </div>
+    </Container>
   )
 }
 
