@@ -26,6 +26,7 @@ const InputLabel = styled.label`
   display: inline-block;
   transition: all 0.4s;
   cursor: pointer;
+  margin-top: 20px;
 
   :hover {
     background-color: #34495e;

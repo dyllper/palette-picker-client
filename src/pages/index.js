@@ -6,6 +6,7 @@ import { connect } from "react-redux"
 import { clearImageName, setImageName } from "../redux/image/image.actions"
 import { clearPalette, setPalette } from "../redux/palette/palette.actions"
 
+import Layout from "../components/layout.component"
 import FileForm from "../components/file-form.component"
 import Palette from "../components/palette.component"
 
@@ -61,23 +62,26 @@ const IndexPage = ({ setImageName, clearImageName, imageName, setPalette }) => {
     submitForm(image)
   }
   return (
-    <Container>
-      <InstructionText>
-        Welcome to my Color Palette Generator App! This fun little projects lets
-        you upload an image that you enjoy the colors of and generate a color
-        palette based on the 6 most prominent colors that exist within the
-        image! The palette will be displayed below your image so that you are
-        able to take a peak at where all each of the 6 color swatches come from!
-      </InstructionText>
-      <FileForm onChange={onChange} />
-      {imageName !== "" && (
-        <DisplayImage
-          src={`https://dyllper-color-palette-api.herokuapp.com/images/${imageName}`}
-          alt="Your uploaded file"
-        />
-      )}
-      <Palette />
-    </Container>
+    <Layout>
+      <Container>
+        <InstructionText>
+          Welcome to my Color Palette Generator App! This fun little projects
+          lets you upload an image that you enjoy the colors of and generate a
+          color palette based on the 6 most prominent colors that exist within
+          the image! The palette will be displayed below your image so that you
+          are able to take a peak at where all each of the 6 color swatches come
+          from!
+        </InstructionText>
+        <FileForm onChange={onChange} />
+        {imageName !== "" && (
+          <DisplayImage
+            src={`https://dyllper-color-palette-api.herokuapp.com/images/${imageName}`}
+            alt="Your uploaded file"
+          />
+        )}
+        <Palette />
+      </Container>
+    </Layout>
   )
 }
 
