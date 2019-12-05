@@ -7,6 +7,7 @@ const HeaderContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 15px;
 `
 
 const Title = styled.h1`
@@ -29,7 +30,7 @@ const GithubNav = styled.div`
 
 const Header = () => (
   <HeaderContainer>
-    <Title>Palette Picker</Title>
+    <Title>Palette Generator</Title>
     <GithubNav>
       <SocialIcon url="https://github.com/dyllper/palette-picker-client-redux"style={{ height: 25, width: 25 }} />
       <span>Check out the code!</span>
