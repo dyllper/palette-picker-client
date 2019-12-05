@@ -3,10 +3,23 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 
 const PaletteContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 5px;
+
+  @media (max-width: 1000px) {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 5px;
+    grid-row-gap: 5px;
+  }
+
+  @media (max-width: 605px) {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 0;
+    justify-items: center;
+    grid-row-gap: 5px;
+  }
 `
 
 const PeletteElement = styled.div`
@@ -26,7 +39,7 @@ const PaletteText = styled.p`
 `
 
 const Palette = ({ showPalette, hexArray }) => (
-  <div>
+  <React.Fragment>
     {showPalette && (
       <PaletteContainer>
         {hexArray.map((hexValue, index) => {
@@ -38,7 +51,7 @@ const Palette = ({ showPalette, hexArray }) => (
         })}
       </PaletteContainer>
     )}
-  </div>
+  </React.Fragment>
 )
 
 const mapStateToProps = state => ({

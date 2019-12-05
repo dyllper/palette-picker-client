@@ -4,17 +4,17 @@ import styled from 'styled-components';
 
 const HeaderContainer = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  margin-left: 45%;
+  align-items: center;
 `
 
 const Title = styled.h1`
   font-color: #32d2b4;
+  margin-bottom: 0;
 `
 
 const GithubNav = styled.div`
-  margin-left: auto;
   display: flex;
   align-items: center;
   margin-right: 10px;

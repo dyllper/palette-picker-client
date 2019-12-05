@@ -11,11 +11,15 @@ import FileForm from "../components/file-form.component"
 import Palette from "../components/palette.component"
 
 const Container = styled.div`
-  width: 900px;
-  margin: 0 auto;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5vw;
 `
 
-const InstructionText = styled.p`
+const InstructionText = styled.div`
   text-indent: 2em;
   line-height: 1.5em;
   font-size: 18px;
@@ -25,8 +29,9 @@ const InstructionText = styled.p`
 
 const DisplayImage = styled.img`
   height: auto;
-  width: 400px;
-  margin: 15px auto;
+  max-width: 500px;
+  margin-top: 15px;
+  margin-bottom: 15px;
   box-shadow: 5px 5xp 10px #0f0f0f;
   display: block;
 `
