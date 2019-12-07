@@ -7,24 +7,25 @@ const HeaderContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 1.5rem;
 `
 
 const Title = styled.h1`
   font-color: #32d2b4;
   margin-bottom: 0;
+  font-size: 3.6rem;
 `
 
 const GithubNav = styled.div`
   display: flex;
   align-items: center;
-  margin-right: 10px;
+  margin-right: 1.0rem;
 
   span {
-    font-size: 12px;
+    font-size: 1.2rem;
     opacity: 0.6;
-    padding-left: 2px;
-    padding-top: 10px;
+    padding-left: 0.2rem;
+    padding-top: 1.0rem;
   }
 `
 

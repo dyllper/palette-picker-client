@@ -17,7 +17,7 @@ const UploadInput = styled.input`
 
 const InputLabel = styled.label`
   vertical-align: middle;
-  font-size: 1.25em;
+  font-size: 2.0rem;
   font-weight: 700;
   padding: 14px 45px;
   margin: 0 auto;

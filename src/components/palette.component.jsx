@@ -34,7 +34,7 @@ const PeletteElement = styled.div`
 const PaletteText = styled.p`
   padding: 0;
   margin: 0;
-  font-size: 25px;
+  font-size: 2.5rem;
   font-weight: bold;
 `
 

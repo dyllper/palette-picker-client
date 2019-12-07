@@ -20,9 +20,9 @@ const Container = styled.div`
 `
 
 const InstructionText = styled.div`
-  text-indent: 2em;
-  line-height: 1.5em;
-  font-size: 18px;
+  text-indent: 2rem;
+  line-height: 2.2rem;
+  font-size: 1.8rem;
   font-family: skolat-latin;
   font-color: #1f1f1f;
 `
@@ -30,9 +30,9 @@ const InstructionText = styled.div`
 const DisplayImage = styled.img`
   height: auto;
   max-width: 500px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  box-shadow: 5px 5xp 10px #0f0f0f;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0.5rem 0.5rem 1rem #0f0f0f;
   display: block;
 `
 
