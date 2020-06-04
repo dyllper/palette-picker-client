@@ -38,11 +38,11 @@ const PaletteText = styled.p`
   font-weight: bold;
 `
 
-const Palette = ({ showPalette, hexArray }) => (
+const Palette = ({ palette, showPalette }) => (
   <React.Fragment>
     {showPalette && (
       <PaletteContainer>
-        {hexArray.map((hexValue, index) => {
+        {palette.map((hexValue, index) => {
           return (
             <PeletteElement key={index} className="palette-element" style={{ backgroundColor: hexValue }}>
               <PaletteText className="palette-text">{hexValue}</PaletteText>
@@ -54,9 +54,4 @@ const Palette = ({ showPalette, hexArray }) => (
   </React.Fragment>
 )
 
-const mapStateToProps = state => ({
-  hexArray: state.palette.hexArray,
-  showPalette: state.palette.showPalette,
-})
-
-export default connect(mapStateToProps)(Palette);
+export default Palette;

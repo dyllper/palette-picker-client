@@ -1,10 +1,6 @@
-import React from "react"
+import React, { useState } from "react"
 import axios from "axios"
 import styled from "styled-components"
-import { connect } from "react-redux"
-
-import { clearImageName, setImageName } from "../redux/image/image.actions"
-import { clearPalette, setPalette } from "../redux/palette/palette.actions"
 
 import Layout from "../components/layout.component"
 import FileForm from "../components/file-form.component"
@@ -36,7 +32,11 @@ const DisplayImage = styled.img`
   display: block;
 `
 
-const IndexPage = ({ setImageName, clearImageName, imageName, setPalette }) => {
+const IndexPage = () => {
+  const [imageName, setImageName] = useState("")
+  const [palette, setPalette] = useState([])
+  const [showPalette, setShowPalette] = useState(false)
+
   const submitForm = image => {
     const formData = new FormData()
     formData.append("image", image)
@@ -55,6 +55,7 @@ const IndexPage = ({ setImageName, clearImageName, imageName, setPalette }) => {
       .then(response => {
         setPalette(response.data.hexColors)
         setImageName(image.name)
+        setShowPalette(true)
       })
       .catch(error => console.log(error))
   }
@@ -62,8 +63,9 @@ const IndexPage = ({ setImageName, clearImageName, imageName, setPalette }) => {
   const onChange = event => {
     event.preventDefault()
     const image = event.target.files[0]
-    clearImageName()
-    clearPalette()
+    setImageName("")
+    setPalette([])
+    setShowPalette(false)
     submitForm(image)
   }
   return (
@@ -84,21 +86,10 @@ const IndexPage = ({ setImageName, clearImageName, imageName, setPalette }) => {
             alt="Your uploaded file"
           />
         )}
-        <Palette />
+        <Palette palette={palette} showPalette={showPalette} />
       </Container>
     </Layout>
   )
 }
 
-const mapDispatchToProps = dispatch => ({
-  setImageName: imageName => dispatch(setImageName(imageName)),
-  setPalette: colors => dispatch(setPalette(colors)),
-  clearImageName: () => dispatch(clearImageName()),
-  clearPalette: () => dispatch(clearPalette()),
-})
-
-const mapStateToProps = state => ({
-  imageName: state.image.imageName,
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(IndexPage)
+export default IndexPage
