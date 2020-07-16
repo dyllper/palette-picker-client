@@ -7,5 +7,6 @@ If you look through my GitHub you may notice that this is one of two repos I hav
 # Future Plans
 
 - ~~Convert application to use styled components~~ **DONE**
-- I have decided I don't like styled components, so... Break out all styling into SCSS files.
-- Update styling to make things look nicer.
+- Create a nicer style/layout
+- Make the layout responsive
+- Look into a11y compliance
