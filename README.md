@@ -4,7 +4,7 @@ This application allows you to upload an image and then generates a color palett
 
 If you look through my GitHub you may notice that this is one of two repos I have created for the frontend of this applicaiton the other one utilizes [Redux](https://redux.js.org/) which was COMPLETELY unecessary for such a small application and was done purely as a learning exercise. This version has been converted to make use of React Hooks instead and is much leaner for it.
 
-# Future Plans
+# TODO
 
 - ~~Convert application to use styled components~~ **DONE**
 - Create a nicer style/layout
