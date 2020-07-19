@@ -1,5 +1,5 @@
 import React from 'react';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import Header from './header.component';
 import Footer from './footer.component';
 
@@ -9,13 +9,20 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
+const AppContainer = styled.div`
+  width: 80%;
+  max-width: 128rem;
+  min-height: 85vh;
+  margin: 0 auto;
+`
+
 const Layout = ({ children }) => (
-  <React.Fragment>
+  <AppContainer>
     <GlobalStyle />
     <Header />
     {children}
     <Footer />
-  </React.Fragment>
+  </AppContainer>
 )
 
 export default Layout;

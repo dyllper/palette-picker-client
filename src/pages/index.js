@@ -7,12 +7,11 @@ import FileForm from "../components/file-form.component"
 import Palette from "../components/palette.component"
 
 const Container = styled.div`
-  width: 90vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 5vw;
+  margin: 3rem 0;
 `
 
 const InstructionText = styled.div`
@@ -20,14 +19,13 @@ const InstructionText = styled.div`
   line-height: 2.2rem;
   font-size: 1.8rem;
   font-family: skolat-latin;
-  font-color: #1f1f1f;
+  color: #1f1f1f;
 `
 
 const DisplayImage = styled.img`
   height: auto;
   max-width: 500px;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin: 3rem 0;
   box-shadow: 0.5rem 0.5rem 1rem #0f0f0f;
   display: block;
 `
